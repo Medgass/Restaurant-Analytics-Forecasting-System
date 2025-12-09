@@ -13,15 +13,21 @@ Features:
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.graph_objects as go
-import plotly.express as px
 from pathlib import Path
 from datetime import datetime, timedelta
 import warnings
 
 warnings.filterwarnings('ignore')
+
+# Try imports, fallback if unavailable
+try:
+    import plotly.graph_objects as go
+    import plotly.express as px
+    PLOTLY_AVAILABLE = True
+except ImportError:
+    PLOTLY_AVAILABLE = False
+    go = None
+    px = None
 
 # ============================================================================
 # PAGE CONFIGURATION
@@ -170,22 +176,28 @@ if page == "📈 Dashboard":
         daily_data = data['daily'].copy()
         if 'date' in daily_data.columns:
             daily_data['date'] = pd.to_datetime(daily_data['date'])
-            fig = px.line(daily_data, x='date', y='total_revenue',
-                         title="Évolution des Ventes",
-                         labels={'date': 'Date', 'total_revenue': 'Ventes (€)'},
-                         template='plotly_white')
-            fig.update_layout(hovermode='x unified', height=400)
-            st.plotly_chart(fig, use_container_width=True)
+            if PLOTLY_AVAILABLE and px is not None:
+                fig = px.line(daily_data, x='date', y='total_revenue',
+                             title="Évolution des Ventes",
+                             labels={'date': 'Date', 'total_revenue': 'Ventes (€)'},
+                             template='plotly_white')
+                fig.update_layout(hovermode='x unified', height=400)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.line_chart(daily_data.set_index('date')['total_revenue'])
     
     with col2:
         st.subheader("📊 Volume Quotidien")
         if 'total_units' in daily_data.columns:
-            fig = px.bar(daily_data, x='date', y='total_units',
-                        title="Unités Vendues par Jour",
-                        labels={'date': 'Date', 'total_units': 'Quantité'},
-                        template='plotly_white')
-            fig.update_layout(hovermode='x unified', height=400, showlegend=False)
-            st.plotly_chart(fig, use_container_width=True)
+            if PLOTLY_AVAILABLE and px is not None:
+                fig = px.bar(daily_data, x='date', y='total_units',
+                            title="Unités Vendues par Jour",
+                            labels={'date': 'Date', 'total_units': 'Quantité'},
+                            template='plotly_white')
+                fig.update_layout(hovermode='x unified', height=400, showlegend=False)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.bar_chart(daily_data.set_index('date')['total_units'])
     
     st.markdown("---")
     
@@ -195,21 +207,27 @@ if page == "📈 Dashboard":
     with col1:
         st.subheader("🏆 Top 5 Produits par Chiffre d'Affaires")
         top_products = data['transactions'].groupby('product_name')['total_amount'].sum().nlargest(5)
-        fig = px.bar(x=top_products.values, y=top_products.index,
-                    orientation='h', template='plotly_white',
-                    labels={'x': 'Ventes (€)', 'y': 'Produit'})
-        fig.update_layout(height=350, showlegend=False)
-        st.plotly_chart(fig, use_container_width=True)
+        if PLOTLY_AVAILABLE and px is not None:
+            fig = px.bar(x=top_products.values, y=top_products.index,
+                        orientation='h', template='plotly_white',
+                        labels={'x': 'Ventes (€)', 'y': 'Produit'})
+            fig.update_layout(height=350, showlegend=False)
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.bar_chart(top_products)
     
     with col2:
         st.subheader("📉 Bottom 5 Produits")
         bottom_products = data['transactions'].groupby('product_name')['total_amount'].sum().nsmallest(5)
-        fig = px.bar(x=bottom_products.values, y=bottom_products.index,
-                    orientation='h', template='plotly_white',
-                    labels={'x': 'Ventes (€)', 'y': 'Produit'},
-                    color_discrete_sequence=['#ff6b6b'])
-        fig.update_layout(height=350, showlegend=False)
-        st.plotly_chart(fig, use_container_width=True)
+        if PLOTLY_AVAILABLE and px is not None:
+            fig = px.bar(x=bottom_products.values, y=bottom_products.index,
+                        orientation='h', template='plotly_white',
+                        labels={'x': 'Ventes (€)', 'y': 'Produit'},
+                        color_discrete_sequence=['#ff6b6b'])
+            fig.update_layout(height=350, showlegend=False)
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.bar_chart(bottom_products)
     
     st.markdown("---")
     
@@ -217,13 +235,17 @@ if page == "📈 Dashboard":
     st.subheader("🔗 Corrélation entre Facteurs Externes et Ventes")
     if 'temperature' in data['daily'].columns and 'total_revenue' in data['daily'].columns:
         corr_data = data['daily'][['temperature', 'precipitation', 'sunshine_hours', 'total_revenue']].corr()
-        fig = go.Figure(data=go.Heatmap(z=corr_data.values,
-                                        x=corr_data.columns,
-                                        y=corr_data.columns,
-                                        colorscale='RdBu',
-                                        zmid=0))
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
+        if PLOTLY_AVAILABLE and go is not None:
+            fig = go.Figure(data=go.Heatmap(z=corr_data.values,
+                                            x=corr_data.columns,
+                                            y=corr_data.columns,
+                                            colorscale='RdBu',
+                                            zmid=0))
+            fig.update_layout(height=400)
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.write("Matrice de corrélation:")
+            st.write(corr_data)
 
 # ============================================================================
 # PAGE 2: FORECASTING
@@ -267,66 +289,146 @@ elif page == "🔮 Prévisions":
         st.subheader(f"📊 Prévisions: {selected_product}")
 
         try:
-            # Respecter l'horizon choisi par l'utilisateur
+            # Données historiques par jour
+            daily_product = pd.Series(dtype=float)
+            if 'date' in product_data.columns:
+                product_data['date'] = pd.to_datetime(product_data['date'])
+                daily_product = product_data.groupby('date')['quantity'].sum().sort_index()
+
+            # Prévision quotidienne simple (baseline) réactive au slider - TOUJOURS GÉNÉRER
+            forecast_daily = pd.DataFrame()
+            hist_mean = 0
+            hist_std = 0
+            
+            if not daily_product.empty and len(daily_product) > 0:
+                hist_mean = float(daily_product.tail(30).mean())
+                hist_std = float(daily_product.tail(30).std(ddof=0))
+            else:
+                hist_mean = float(product_data['quantity'].mean())
+                hist_std = float(product_data['quantity'].std(ddof=0))
+            
+            hist_mean = 0 if np.isnan(hist_mean) else hist_mean
+            hist_std = 0 if np.isnan(hist_std) else hist_std
+            lower = np.maximum(hist_mean - 1.28 * hist_std, 0)
+            upper = hist_mean + 1.28 * hist_std
+            
+            try:
+                if not daily_product.empty:
+                    start_date = daily_product.index.max() + pd.Timedelta(days=1)
+                    horizon_dates = pd.date_range(start=start_date, periods=forecast_days, freq='D')
+                else:
+                    horizon_dates = pd.date_range(start=pd.Timestamp.now(), periods=forecast_days, freq='D')
+            except:
+                horizon_dates = list(range(forecast_days))
+            
+            forecast_daily = pd.DataFrame({
+                'date': horizon_dates,
+                'forecast_qty': hist_mean,
+                'lower': lower,
+                'upper': upper
+            })
+
+            # Prévisions agrégées (hebdo/mensuel) depuis le CSV existant
+            aggregated_df = pd.DataFrame()
             product_forecast = (
                 data['forecasts'][data['forecasts']['product_name'] == selected_product]
                 if 'product_name' in data['forecasts'].columns
                 else data['forecasts'][data['forecasts']['produit'] == selected_product]
-            )
-            product_forecast = product_forecast.head(forecast_days)
-            
+            ).copy()
             if not product_forecast.empty:
-                fig = go.Figure()
-                
-                # Historique
-                if 'date' in product_data.columns:
-                    product_data['date'] = pd.to_datetime(product_data['date'])
-                    daily_product = product_data.groupby('date')['quantity'].sum().tail(90)
+                rows = []
+                labels = {'week': "Prévision hebdo", 'month': "Prévision mensuelle", 'lead': "Prévision lead"}
+                for period in ['week', 'month', 'lead']:
+                    m, l, u = f"{period}_mean", f"{period}_lower", f"{period}_upper"
+                    if m in product_forecast.columns:
+                        rows.append({
+                            "Période": labels.get(period, period),
+                            "Prévision": float(product_forecast[m].iloc[0]),
+                            "Borne basse": float(product_forecast[l].iloc[0]) if l in product_forecast.columns else None,
+                            "Borne haute": float(product_forecast[u].iloc[0]) if u in product_forecast.columns else None,
+                        })
+                if rows:
+                    aggregated_df = pd.DataFrame(rows)
+
+            # Affichage des graphiques
+            if PLOTLY_AVAILABLE and go is not None:
+                # Historique + prévision quotidienne réactive
+                if not forecast_daily.empty:
+                    fig = go.Figure()
                     fig.add_trace(go.Scatter(
-                        x=daily_product.index,
-                        y=daily_product.values,
+                        x=daily_product.tail(90).index,
+                        y=daily_product.tail(90).values,
                         mode='lines',
-                        name='Historique',
-                        line=dict(color='blue')
+                        name='Historique (90j)',
+                        line=dict(color='blue', width=2)
                     ))
-                
-                # Prévision
-                if 'prévision' in product_forecast.columns:
                     fig.add_trace(go.Scatter(
-                        x=range(1, len(product_forecast) + 1),
-                        y=product_forecast['prévision'],
+                        x=forecast_daily['date'],
+                        y=forecast_daily['forecast_qty'],
                         mode='lines+markers',
-                        name='Prévision',
-                        line=dict(color='red', dash='dash')
+                        name='Prévision (réactive)',
+                        line=dict(color='crimson', dash='dash')
                     ))
-                
-                # Intervalle de confiance
-                if 'intervalle_inf' in product_forecast.columns and 'intervalle_sup' in product_forecast.columns:
                     fig.add_trace(go.Scatter(
-                        x=list(range(1, len(product_forecast) + 1)) + list(range(1, len(product_forecast) + 1))[::-1],
-                        y=list(product_forecast['intervalle_sup']) + list(product_forecast['intervalle_inf'])[::-1],
+                        x=list(forecast_daily['date']) + list(forecast_daily['date'])[::-1],
+                        y=list(forecast_daily['upper']) + list(forecast_daily['lower'])[::-1],
                         fill='toself',
-                        name='Intervalle de Confiance (95%)',
-                        fillcolor='rgba(255,0,0,0.2)',
+                        name='Intervalle (≈80%)',
+                        fillcolor='rgba(255,0,0,0.12)',
                         line=dict(color='rgba(255,255,255,0)')
                     ))
-                
-                fig.update_layout(
-                    title=f"Prévision {forecast_days} jours - {selected_product}",
-                    xaxis_title="Jours",
-                    yaxis_title="Quantité",
-                    hovermode='x unified',
-                    template='plotly_white',
-                    height=450
-                )
-                st.plotly_chart(fig, use_container_width=True)
-                
-                # Afficher les données
-                st.subheader("📋 Détails de la Prévision")
-                st.dataframe(product_forecast, use_container_width=True)
-                st.caption(f"Horizon affiché: {forecast_days} jours")
+                    fig.update_layout(
+                        title=f"Prévision {forecast_days} jours - {selected_product}",
+                        xaxis_title="Date",
+                        yaxis_title="Quantité",
+                        template='plotly_white',
+                        hovermode='x unified',
+                        height=420
+                    )
+                    st.plotly_chart(fig, width='stretch')
+
+                # Barres des prévisions agrégées existantes
+                if not aggregated_df.empty:
+                    bar_fig = go.Figure()
+                    bar_fig.add_trace(go.Bar(
+                        x=aggregated_df['Période'],
+                        y=aggregated_df['Prévision'],
+                        name='Prévision agrégée',
+                        marker_color='darkorange',
+                        error_y=dict(
+                            type='data',
+                            array=(aggregated_df['Borne haute'] - aggregated_df['Prévision']).fillna(0),
+                            arrayminus=(aggregated_df['Prévision'] - aggregated_df['Borne basse']).fillna(0),
+                            visible=True
+                        )
+                    ))
+                    bar_fig.update_layout(
+                        title=f"Prévisions agrégées - {selected_product}",
+                        xaxis_title="Horizon",
+                        yaxis_title="Quantité prévue",
+                        template='plotly_white',
+                        hovermode='x unified',
+                        height=360
+                    )
+                    st.plotly_chart(bar_fig, width='stretch')
+
+            # Résumé sous forme de métriques (pas de tableaux)
+            if not forecast_daily.empty:
+                colm1, colm2, colm3 = st.columns(3)
+                colm1.metric("Prévision moyenne", f"{forecast_daily['forecast_qty'].iloc[0]:.1f}")
+                colm2.metric("Borne basse", f"{forecast_daily['lower'].iloc[0]:.1f}")
+                colm3.metric("Borne haute", f"{forecast_daily['upper'].iloc[0]:.1f}")
+                st.caption(f"Horizon affiché: {forecast_days} jours | moyenne récente (30j): {hist_mean:.2f}")
+
+            if not aggregated_df.empty:
+                cols = st.columns(len(aggregated_df))
+                for idx, row in aggregated_df.iterrows():
+                    cols[idx].metric(row['Période'], f"{row['Prévision']:.1f}")
+
+            if forecast_daily.empty and aggregated_df.empty:
+                st.info("Aucune prévision disponible pour ce produit.")
         except Exception as e:
-            st.warning(f"⚠️ Les données de prévision ne sont pas disponibles pour ce produit")
+            st.warning(f"⚠️ Les données de prévision ne sont pas disponibles pour ce produit: {str(e)}")
     
     else:
         st.info("💡 Exécutez d'abord le notebook pour générer les prévisions")
@@ -338,6 +440,18 @@ elif page == "🔮 Prévisions":
 elif page == "📦 Inventaire":
     st.header("📦 Gestion d'Inventaire")
     
+    # Initialize inventory_data - ALL items, not just near-expiry
+    inventory_data = pd.DataFrame()
+    if data['inventory'] is not None:
+        inventory_base = data['inventory'].copy()
+        if 'expiration_date' in inventory_base.columns:
+            inventory_base['expiration_date'] = pd.to_datetime(inventory_base['expiration_date'])
+        if 'days_until_expiry' not in inventory_base.columns and 'expiration_date' in inventory_base.columns:
+            inventory_base['days_until_expiry'] = (inventory_base['expiration_date'] - pd.Timestamp.today()).dt.days
+        
+        # Use full inventory base as primary source
+        inventory_data = inventory_base
+    
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
@@ -348,63 +462,90 @@ elif page == "📦 Inventaire":
         st.metric("Articles Différents", len(data['inventory']))
     
     with col3:
-        if data['near_expiry'] is not None:
-            at_risk = len(data['near_expiry'])
+        if 'days_until_expiry' in inventory_data.columns:
+            at_risk = len(inventory_data[inventory_data['days_until_expiry'] <= 7])
             st.metric("⚠️ À Risque", f"{at_risk:,} lots")
         else:
-            # Calculer depuis inventory si near_expiry n'existe pas
-            at_risk_inv = len(data['inventory'][data['inventory']['days_until_expiry'] <= 7]) if 'days_until_expiry' in data['inventory'].columns else 0
-            st.metric("⚠️ À Risque", f"{at_risk_inv:,} lots")
+            st.metric("⚠️ À Risque", "N/A")
     
     with col4:
-        if data['near_expiry'] is not None:
-            critical = len(data['near_expiry'][data['near_expiry']['days_until_expiry'] <= 1])
+        if 'days_until_expiry' in inventory_data.columns:
+            critical = len(inventory_data[inventory_data['days_until_expiry'] <= 1])
             st.metric("🚨 Critique", f"{critical:,} lots")
         else:
-            # Calculer depuis inventory
-            critical_inv = len(data['inventory'][data['inventory']['days_until_expiry'] <= 1]) if 'days_until_expiry' in data['inventory'].columns else 0
-            st.metric("🚨 Critique", f"{critical_inv:,} lots")
+            st.metric("🚨 Critique", "N/A")
     
     st.markdown("---")
     
-    # Utiliser inventory si near_expiry n'existe pas
-    inventory_data = data['near_expiry'] if data['near_expiry'] is not None else data['inventory']
-    
     if inventory_data is not None and len(inventory_data) > 0:
-        tab1, tab2, tab3 = st.tabs(["⚠️ Articles à Risque", "📊 Distribution", "💰 Recommandations"])
+        tab1, tab2, tab3, tab4 = st.tabs(["⚠️ Articles à Risque", "📊 Distribution", "💰 Recommandations", "📋 Tous les Articles"])
         
         with tab1:
             st.subheader("Articles en Danger d'Expiration")
             
-            # S'assurer que la colonne existe
             if 'days_until_expiry' in inventory_data.columns:
-                near_expiry_sorted = inventory_data.sort_values('days_until_expiry')
+                # Filter items at risk (≤30 jours)
+                near_expiry_sorted = inventory_data[inventory_data['days_until_expiry'] <= 30].sort_values('days_until_expiry')
                 
-                # Color coding
-                def highlight_risk(row):
-                    days = row.get('days_until_expiry', 999)
-                    if days <= 1:
-                        return ['background-color: #ff6b6b'] * len(row)
-                    elif days <= 3:
-                        return ['background-color: #ffa500'] * len(row)
-                    elif days <= 7:
-                        return ['background-color: #fff9e6'] * len(row)
+                if len(near_expiry_sorted) > 0:
+                    # Colonnes à afficher
+                    cols_avail = near_expiry_sorted.columns.tolist()
+                    display_cols = []
+                    for col in ['product_name', 'category', 'batch_number', 'quantity_available', 'quantity', 'days_until_expiry', 'expiration_date', 'supplier']:
+                        if col in cols_avail:
+                            display_cols.append(col)
+                    display_cols = display_cols[:8]
+                    
+                    # Stats par urgence
+                    col_crit, col_haute, col_moy = st.columns(3)
+                    with col_crit:
+                        crit_count = len(near_expiry_sorted[near_expiry_sorted['days_until_expiry'] <= 1])
+                        st.metric("🚨 Critique (≤1j)", crit_count)
+                    with col_haute:
+                        high_count = len(near_expiry_sorted[(near_expiry_sorted['days_until_expiry'] > 1) & (near_expiry_sorted['days_until_expiry'] <= 7)])
+                        st.metric("⚠️ Haute (2-7j)", high_count)
+                    with col_moy:
+                        med_count = len(near_expiry_sorted[(near_expiry_sorted['days_until_expiry'] > 7) & (near_expiry_sorted['days_until_expiry'] <= 30)])
+                        st.metric("📌 Moyen (8-30j)", med_count)
+                    
+                    st.markdown("---")
+                    
+                    # Articles critiques
+                    st.subheader("🚨 Articles Critiques (Expiration ≤ 1 jour)")
+                    critical_items = near_expiry_sorted[near_expiry_sorted['days_until_expiry'] <= 1]
+                    if len(critical_items) > 0:
+                        st.dataframe(critical_items[display_cols], use_container_width=True)
                     else:
-                        return ['background-color: white'] * len(row)
-                
-                # Afficher les 20 premiers
-                display_cols = ['product_name', 'quantity_available', 'days_until_expiry', 'expiration_date'] if 'product_name' in near_expiry_sorted.columns else near_expiry_sorted.columns[:5]
-                styled_df = near_expiry_sorted[display_cols].head(20).style.apply(highlight_risk, axis=1)
-                st.dataframe(styled_df, use_container_width=True)
-                
-                # Export button
-                csv = near_expiry_sorted.to_csv(index=False)
-                st.download_button(
-                    label="📥 Télécharger Liste Complète (CSV)",
-                    data=csv,
-                    file_name=f"inventory_expiry_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
-                    mime="text/csv"
-                )
+                        st.info("Aucun article en situation critique")
+                    
+                    # Articles à haut risque
+                    st.subheader("⚠️ Articles à Haut Risque (2-7 jours)")
+                    high_items = near_expiry_sorted[(near_expiry_sorted['days_until_expiry'] > 1) & (near_expiry_sorted['days_until_expiry'] <= 7)]
+                    if len(high_items) > 0:
+                        st.dataframe(high_items[display_cols], use_container_width=True)
+                    else:
+                        st.info("Aucun article à haut risque")
+                    
+                    # Articles à risque moyen
+                    st.subheader("📌 Articles à Risque Moyen (8-30 jours)")
+                    med_items = near_expiry_sorted[(near_expiry_sorted['days_until_expiry'] > 7) & (near_expiry_sorted['days_until_expiry'] <= 30)]
+                    if len(med_items) > 0:
+                        st.dataframe(med_items[display_cols], use_container_width=True)
+                    else:
+                        st.info("Aucun article à risque moyen")
+                    
+                    st.markdown("---")
+                    
+                    # Export
+                    csv = near_expiry_sorted.to_csv(index=False)
+                    st.download_button(
+                        label="📥 Télécharger Liste Complète (CSV)",
+                        data=csv,
+                        file_name=f"inventory_expiry_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                        mime="text/csv"
+                    )
+                else:
+                    st.success("✅ Aucun article en danger d'expiration (≤30 jours)")
             else:
                 st.warning("⚠️ Colonne 'days_until_expiry' non trouvée dans les données")
         
@@ -413,12 +554,15 @@ elif page == "📦 Inventaire":
             if 'days_until_expiry' in inventory_data.columns:
                 # Filtrer pour afficher seulement <= 30 jours
                 filtered_data = inventory_data[inventory_data['days_until_expiry'] <= 30]
-                fig = px.histogram(filtered_data, x='days_until_expiry', nbins=30,
-                                  template='plotly_white',
-                                  labels={'days_until_expiry': 'Jours jusqu\'à Expiration', 'count': 'Nombre de Lots'},
-                                  title="Distribution des Lots par Jours d'Expiration (≤30 jours)")
-                fig.update_layout(height=400, showlegend=False)
-                st.plotly_chart(fig, use_container_width=True)
+                if PLOTLY_AVAILABLE and px is not None:
+                    fig = px.histogram(filtered_data, x='days_until_expiry', nbins=30,
+                                      template='plotly_white',
+                                      labels={'days_until_expiry': 'Jours jusqu\'à Expiration', 'count': 'Nombre de Lots'},
+                                      title="Distribution des Lots par Jours d'Expiration (≤30 jours)")
+                    fig.update_layout(height=400, showlegend=False)
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.bar_chart(filtered_data['days_until_expiry'].value_counts().sort_index())
                 
                 st.info(f"📊 Total lots à risque (≤30 jours): {len(filtered_data):,}")
             else:
@@ -451,6 +595,32 @@ elif page == "📦 Inventaire":
                     st.markdown(f"{label} → **{discount}% de réduction** | {count} lots | €{value:,.2f}")
             else:
                 st.warning("⚠️ Données insuffisantes pour calculer les recommandations")
+        
+        with tab4:
+            st.subheader("📋 Tous les Articles en Inventaire")
+            st.info(f"📊 Affichage de {len(inventory_data):,} articles")
+            
+            # Display all inventory items with sorting/filtering
+            if len(inventory_data) > 0:
+                # Add sorting options
+                sort_col = st.selectbox("Trier par:", 
+                    options=['product_name', 'days_until_expiry', 'quantity_available'] if 'quantity_available' in inventory_data.columns else inventory_data.columns.tolist(),
+                    key="inventory_sort")
+                sort_asc = st.checkbox("Ordre croissant", value=True, key="inventory_order")
+                
+                sorted_inv = inventory_data.sort_values(by=sort_col, ascending=sort_asc)
+                display_cols = [col for col in ['product_name', 'quantity_available', 'days_until_expiry', 'expiration_date'] if col in sorted_inv.columns]
+                
+                st.dataframe(sorted_inv[display_cols], use_container_width=True, height=400)
+                
+                # Download button
+                csv_all = sorted_inv.to_csv(index=False)
+                st.download_button(
+                    label="📥 Télécharger Tous les Articles (CSV)",
+                    data=csv_all,
+                    file_name=f"inventory_all_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv"
+                )
     else:
         st.warning("⚠️ Aucune donnée d'inventaire disponible. Exécutez d'abord le notebook.")
 
@@ -507,10 +677,14 @@ elif page == "👥 Clients RFM":
         col1, col2 = st.columns([1, 1])
         
         with col1:
-            fig = px.pie(values=cluster_data['Clients'], labels=cluster_data['Cluster'],
-                        template='plotly_white')
-            fig.update_layout(height=400)
-            st.plotly_chart(fig, use_container_width=True)
+            if PLOTLY_AVAILABLE and px is not None:
+                fig = px.pie(values=cluster_data['Clients'], labels=cluster_data['Cluster'],
+                            template='plotly_white')
+                fig.update_layout(height=400)
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.write("Répartition par cluster:")
+                st.write(cluster_data[['Cluster', 'Clients']])
         
         with col2:
             st.dataframe(cluster_data, use_container_width=True)
