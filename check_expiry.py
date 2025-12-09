@@ -1,0 +1,17 @@
+import pandas as pd
+inv = pd.read_csv('restaurant_stock_inventory.csv')
+inv['expiration_date'] = pd.to_datetime(inv['expiration_date'])
+print('Sample data:')
+print(inv[['product_name', 'expiration_date']].head(5))
+print()
+print(f"Min expiry date: {inv['expiration_date'].min()}")
+print(f"Max expiry date: {inv['expiration_date'].max()}")
+print(f"Today: {pd.Timestamp.today()}")
+print()
+inv['days_until'] = (inv['expiration_date'] - pd.Timestamp.today()).dt.days
+print(f"Days until expiry - Min: {inv['days_until'].min()}, Max: {inv['days_until'].max()}")
+print(f"Items by expiry window:")
+print(f"  <= 1 day: {len(inv[inv['days_until'] <= 1])}")
+print(f"  2-7 days: {len(inv[(inv['days_until'] > 1) & (inv['days_until'] <= 7)])}")
+print(f"  8-30 days: {len(inv[(inv['days_until'] > 7) & (inv['days_until'] <= 30)])}")
+print(f"  > 30 days: {len(inv[inv['days_until'] > 30])}")
