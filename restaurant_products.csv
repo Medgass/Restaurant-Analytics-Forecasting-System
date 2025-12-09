@@ -1,0 +1,13 @@
+product_id,name,category,unit_cost,unit_price,shelf_life,base_demand
+P001,Fresh Salmon Fillet,Seafood,18.5,32.0,3,25
+P002,Ribeye Steak,Meat,22.0,45.0,5,30
+P003,Caesar Salad Mix,Vegetables,4.5,12.0,4,45
+P004,Tiramisu Dessert,Desserts,5.0,14.0,3,35
+P005,Grilled Chicken Breast,Meat,8.0,22.0,4,50
+P006,Lobster Tail,Seafood,35.0,65.0,2,12
+P007,Pasta Carbonara,Pasta,6.0,18.0,7,55
+P008,French Onion Soup,Soups,3.5,10.0,5,40
+P009,Chocolate Lava Cake,Desserts,4.0,12.0,4,30
+P010,Craft Beer (Draft),Beverages,3.0,8.0,14,80
+P011,House Wine (Glass),Beverages,4.0,12.0,30,60
+P012,Ice Cream Sundae,Desserts,3.0,9.0,60,25
