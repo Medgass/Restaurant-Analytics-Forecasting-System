@@ -1,0 +1,121 @@
+month,product_name,units_sold,revenue,rank,near_expiry_qty,near_expiry_ratio,recommended_discount_pct
+2023-01,Ribeye Steak,489,22005.0,1,0,0.0,10
+2023-01,Lobster Tail,229,14885.0,2,9528,1.0,75
+2023-01,Grilled Chicken Breast,645,14190.0,3,0,0.0,10
+2023-01,Fresh Salmon Fillet,429,13728.0,4,0,0.0,10
+2023-01,Pasta Carbonara,691,12438.0,5,0,0.0,10
+2023-02,Ribeye Steak,486,21870.0,1,0,0.0,10
+2023-02,Lobster Tail,251,16315.0,2,9528,1.0,75
+2023-02,Grilled Chicken Breast,682,15004.0,3,0,0.0,10
+2023-02,Pasta Carbonara,743,13374.0,4,0,0.0,10
+2023-02,Fresh Salmon Fillet,408,13056.0,5,0,0.0,10
+2023-03,Ribeye Steak,501,22545.0,1,0,0.0,10
+2023-03,Lobster Tail,283,18395.0,2,9528,1.0,75
+2023-03,Grilled Chicken Breast,782,17204.0,3,0,0.0,10
+2023-03,Pasta Carbonara,913,16434.0,4,0,0.0,10
+2023-03,Fresh Salmon Fillet,452,14464.0,5,0,0.0,10
+2023-04,Ribeye Steak,631,28395.0,1,0,0.0,10
+2023-04,Lobster Tail,422,27430.0,2,9528,1.0,75
+2023-04,Grilled Chicken Breast,1045,22990.0,3,0,0.0,10
+2023-04,Fresh Salmon Fillet,634,20288.0,4,0,0.0,10
+2023-04,Pasta Carbonara,1082,19476.0,5,0,0.0,10
+2023-05,Ribeye Steak,779,35055.0,1,0,0.0,10
+2023-05,Lobster Tail,423,27495.0,2,9528,1.0,75
+2023-05,Grilled Chicken Breast,1129,24838.0,3,0,0.0,10
+2023-05,Pasta Carbonara,1234,22212.0,4,0,0.0,10
+2023-05,Fresh Salmon Fillet,679,21728.0,5,0,0.0,10
+2023-06,Ribeye Steak,805,36225.0,1,0,0.0,10
+2023-06,Lobster Tail,520,33800.0,2,9528,1.0,75
+2023-06,Grilled Chicken Breast,1288,28336.0,3,0,0.0,10
+2023-06,Fresh Salmon Fillet,819,26208.0,4,0,0.0,10
+2023-06,Pasta Carbonara,1338,24084.0,5,0,0.0,10
+2023-07,Ribeye Steak,855,38475.0,1,0,0.0,10
+2023-07,Lobster Tail,549,35685.0,2,9528,1.0,75
+2023-07,Grilled Chicken Breast,1433,31526.0,3,0,0.0,10
+2023-07,Fresh Salmon Fillet,960,30720.0,4,0,0.0,10
+2023-07,Pasta Carbonara,1490,26820.0,5,0,0.0,10
+2023-08,Ribeye Steak,812,36540.0,1,0,0.0,10
+2023-08,Lobster Tail,462,30030.0,2,9528,1.0,75
+2023-08,Grilled Chicken Breast,1202,26444.0,3,0,0.0,10
+2023-08,Fresh Salmon Fillet,817,26144.0,4,0,0.0,10
+2023-08,Pasta Carbonara,1289,23202.0,5,0,0.0,10
+2023-09,Ribeye Steak,672,30240.0,1,0,0.0,10
+2023-09,Grilled Chicken Breast,991,21802.0,2,0,0.0,10
+2023-09,Lobster Tail,335,21775.0,3,9528,1.0,75
+2023-09,Pasta Carbonara,1134,20412.0,4,0,0.0,10
+2023-09,Fresh Salmon Fillet,608,19456.0,5,0,0.0,10
+2023-10,Ribeye Steak,603,27135.0,1,0,0.0,10
+2023-10,Lobster Tail,331,21515.0,2,9528,1.0,75
+2023-10,Grilled Chicken Breast,931,20482.0,3,0,0.0,10
+2023-10,Pasta Carbonara,1005,18090.0,4,0,0.0,10
+2023-10,Fresh Salmon Fillet,506,16192.0,5,0,0.0,10
+2023-11,Ribeye Steak,527,23715.0,1,0,0.0,10
+2023-11,Lobster Tail,277,18005.0,2,9528,1.0,75
+2023-11,Grilled Chicken Breast,697,15334.0,3,0,0.0,10
+2023-11,Fresh Salmon Fillet,456,14592.0,4,0,0.0,10
+2023-11,Pasta Carbonara,749,13482.0,5,0,0.0,10
+2023-12,Ribeye Steak,462,20790.0,1,0,0.0,10
+2023-12,Lobster Tail,271,17615.0,2,9528,1.0,75
+2023-12,Fresh Salmon Fillet,471,15072.0,3,0,0.0,10
+2023-12,Grilled Chicken Breast,672,14784.0,4,0,0.0,10
+2023-12,Pasta Carbonara,725,13050.0,5,0,0.0,10
+2024-01,Ribeye Steak,480,21600.0,1,0,0.0,10
+2024-01,Lobster Tail,231,15015.0,2,9528,1.0,75
+2024-01,Fresh Salmon Fillet,441,14112.0,3,0,0.0,10
+2024-01,Grilled Chicken Breast,637,14014.0,4,0,0.0,10
+2024-01,Pasta Carbonara,746,13428.0,5,0,0.0,10
+2024-02,Ribeye Steak,441,19845.0,1,0,0.0,10
+2024-02,Lobster Tail,240,15600.0,2,9528,1.0,75
+2024-02,Fresh Salmon Fillet,464,14848.0,3,0,0.0,10
+2024-02,Grilled Chicken Breast,660,14520.0,4,0,0.0,10
+2024-02,Pasta Carbonara,735,13230.0,5,0,0.0,10
+2024-03,Ribeye Steak,615,27675.0,1,0,0.0,10
+2024-03,Lobster Tail,306,19890.0,2,9528,1.0,75
+2024-03,Grilled Chicken Breast,850,18700.0,3,0,0.0,10
+2024-03,Pasta Carbonara,927,16686.0,4,0,0.0,10
+2024-03,Fresh Salmon Fillet,497,15904.0,5,0,0.0,10
+2024-04,Ribeye Steak,655,29475.0,1,0,0.0,10
+2024-04,Lobster Tail,343,22295.0,2,9528,1.0,75
+2024-04,Grilled Chicken Breast,993,21846.0,3,0,0.0,10
+2024-04,Pasta Carbonara,1050,18900.0,4,0,0.0,10
+2024-04,Fresh Salmon Fillet,584,18688.0,5,0,0.0,10
+2024-05,Ribeye Steak,712,32040.0,1,0,0.0,10
+2024-05,Grilled Chicken Breast,1315,28930.0,2,0,0.0,10
+2024-05,Lobster Tail,436,28340.0,3,9528,1.0,75
+2024-05,Pasta Carbonara,1336,24048.0,4,0,0.0,10
+2024-05,Fresh Salmon Fillet,613,19616.0,5,0,0.0,10
+2024-06,Ribeye Steak,841,37845.0,1,0,0.0,10
+2024-06,Lobster Tail,543,35295.0,2,9528,1.0,75
+2024-06,Grilled Chicken Breast,1364,30008.0,3,0,0.0,10
+2024-06,Fresh Salmon Fillet,867,27744.0,4,0,0.0,10
+2024-06,Pasta Carbonara,1394,25092.0,5,0,0.0,10
+2024-07,Ribeye Steak,829,37305.0,1,0,0.0,10
+2024-07,Lobster Tail,493,32045.0,2,9528,1.0,75
+2024-07,Grilled Chicken Breast,1442,31724.0,3,0,0.0,10
+2024-07,Fresh Salmon Fillet,913,29216.0,4,0,0.0,10
+2024-07,Pasta Carbonara,1618,29124.0,5,0,0.0,10
+2024-08,Ribeye Steak,772,34740.0,1,0,0.0,10
+2024-08,Lobster Tail,487,31655.0,2,9528,1.0,75
+2024-08,Fresh Salmon Fillet,830,26560.0,3,0,0.0,10
+2024-08,Grilled Chicken Breast,1185,26070.0,4,0,0.0,10
+2024-08,Pasta Carbonara,1331,23958.0,5,0,0.0,10
+2024-09,Ribeye Steak,637,28665.0,1,0,0.0,10
+2024-09,Lobster Tail,374,24310.0,2,9528,1.0,75
+2024-09,Grilled Chicken Breast,959,21098.0,3,0,0.0,10
+2024-09,Pasta Carbonara,1161,20898.0,4,0,0.0,10
+2024-09,Fresh Salmon Fillet,568,18176.0,5,0,0.0,10
+2024-10,Ribeye Steak,574,25830.0,1,0,0.0,10
+2024-10,Lobster Tail,357,23205.0,2,9528,1.0,75
+2024-10,Fresh Salmon Fillet,612,19584.0,3,0,0.0,10
+2024-10,Grilled Chicken Breast,869,19118.0,4,0,0.0,10
+2024-10,Pasta Carbonara,1013,18234.0,5,0,0.0,10
+2024-11,Ribeye Steak,509,22905.0,1,0,0.0,10
+2024-11,Lobster Tail,260,16900.0,2,9528,1.0,75
+2024-11,Grilled Chicken Breast,734,16148.0,3,0,0.0,10
+2024-11,Fresh Salmon Fillet,461,14752.0,4,0,0.0,10
+2024-11,Pasta Carbonara,814,14652.0,5,0,0.0,10
+2024-12,Ribeye Steak,507,22815.0,1,0,0.0,10
+2024-12,Lobster Tail,276,17940.0,2,9528,1.0,75
+2024-12,Fresh Salmon Fillet,465,14880.0,3,0,0.0,10
+2024-12,Grilled Chicken Breast,666,14652.0,4,0,0.0,10
+2024-12,Pasta Carbonara,728,13104.0,5,0,0.0,10

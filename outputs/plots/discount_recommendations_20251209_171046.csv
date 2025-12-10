@@ -1,0 +1,13 @@
+product_name,final_stock,near_expiry_qty,near_expiry_ratio,expiry_risk_score,recommended_discount_pct
+Lobster Tail,9528,9528,1.0,1.0,75
+Caesar Salad Mix,35528,0,0.0,0.0,10
+Chocolate Lava Cake,24126,0,0.0,0.0,10
+Craft Beer (Draft),64641,0,0.0,0.0,10
+French Onion Soup,32014,0,0.0,0.0,10
+Fresh Salmon Fillet,19962,0,0.0,0.0,10
+Grilled Chicken Breast,40056,0,0.0,0.0,10
+House Wine (Glass),47987,0,0.0,0.0,10
+Ice Cream Sundae,20106,0,0.0,0.0,10
+Pasta Carbonara,44323,0,0.0,0.0,10
+Ribeye Steak,23999,0,0.0,0.0,10
+Tiramisu Dessert,28265,0,0.0,0.0,10

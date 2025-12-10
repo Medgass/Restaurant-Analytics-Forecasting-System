@@ -1,0 +1,501 @@
+client_id,recency,frequency,monetary,cluster,offer_type
+CLI_0001,0,223,8480.0,1,bundle promo
+CLI_0002,5,258,8518.0,0,VIP offer
+CLI_0003,1,235,7514.0,1,bundle promo
+CLI_0004,10,246,8726.0,2,discount
+CLI_0005,3,257,8770.0,0,VIP offer
+CLI_0006,4,243,9095.0,0,VIP offer
+CLI_0007,5,261,9048.0,0,VIP offer
+CLI_0008,7,271,10184.0,0,VIP offer
+CLI_0009,3,243,8424.0,1,bundle promo
+CLI_0010,1,230,8544.0,1,bundle promo
+CLI_0011,3,244,8465.0,1,bundle promo
+CLI_0012,4,236,7617.0,1,bundle promo
+CLI_0013,5,237,8704.0,2,discount
+CLI_0014,0,267,9923.0,0,VIP offer
+CLI_0015,3,231,7893.0,1,bundle promo
+CLI_0016,1,254,9395.0,0,VIP offer
+CLI_0017,8,217,7572.0,2,discount
+CLI_0018,2,223,8312.0,1,bundle promo
+CLI_0019,16,268,9424.0,2,discount
+CLI_0020,3,243,8280.0,1,bundle promo
+CLI_0021,5,241,8468.0,2,discount
+CLI_0022,1,257,8087.0,1,bundle promo
+CLI_0023,9,245,9258.0,2,discount
+CLI_0024,1,219,8759.0,1,bundle promo
+CLI_0025,11,241,9016.0,2,discount
+CLI_0026,6,232,9436.0,2,discount
+CLI_0027,1,240,8239.0,1,bundle promo
+CLI_0028,0,222,7161.0,1,bundle promo
+CLI_0029,5,239,9027.0,2,discount
+CLI_0030,2,242,7673.0,1,bundle promo
+CLI_0031,0,257,8841.0,0,VIP offer
+CLI_0032,3,222,8276.0,1,bundle promo
+CLI_0033,0,236,8355.0,1,bundle promo
+CLI_0034,12,256,9736.0,2,discount
+CLI_0035,1,255,8596.0,0,VIP offer
+CLI_0036,8,260,7988.0,2,discount
+CLI_0037,9,252,9866.0,2,discount
+CLI_0038,8,249,7546.0,2,discount
+CLI_0039,3,249,8018.0,1,bundle promo
+CLI_0040,5,243,8751.0,2,discount
+CLI_0041,14,247,8298.0,2,discount
+CLI_0042,1,255,8094.0,1,bundle promo
+CLI_0043,6,227,7896.0,2,discount
+CLI_0044,0,226,6949.0,1,bundle promo
+CLI_0045,5,240,9018.0,2,discount
+CLI_0046,4,254,8815.0,0,VIP offer
+CLI_0047,1,254,9495.0,0,VIP offer
+CLI_0048,1,233,8226.0,1,bundle promo
+CLI_0049,2,241,8132.0,1,bundle promo
+CLI_0050,11,258,9972.0,2,discount
+CLI_0051,1,240,7791.0,1,bundle promo
+CLI_0052,1,251,8477.0,1,bundle promo
+CLI_0053,0,241,7758.0,1,bundle promo
+CLI_0054,2,238,8476.0,1,bundle promo
+CLI_0055,0,251,8721.0,0,VIP offer
+CLI_0056,0,265,9585.0,0,VIP offer
+CLI_0057,2,226,7887.0,1,bundle promo
+CLI_0058,2,262,10021.0,0,VIP offer
+CLI_0059,2,245,9041.0,0,VIP offer
+CLI_0060,3,236,8669.0,1,bundle promo
+CLI_0061,3,231,8695.0,1,bundle promo
+CLI_0062,3,253,8624.0,0,VIP offer
+CLI_0063,7,263,10117.0,0,VIP offer
+CLI_0064,1,233,8780.0,1,bundle promo
+CLI_0065,2,253,8705.0,0,VIP offer
+CLI_0066,0,229,8629.0,1,bundle promo
+CLI_0067,2,253,8524.0,0,VIP offer
+CLI_0068,0,278,9559.0,0,VIP offer
+CLI_0069,2,234,8399.0,1,bundle promo
+CLI_0070,0,256,8468.0,0,VIP offer
+CLI_0071,0,231,7693.0,1,bundle promo
+CLI_0072,6,226,8014.0,2,discount
+CLI_0073,3,224,8389.0,1,bundle promo
+CLI_0074,7,237,8471.0,2,discount
+CLI_0075,1,214,7565.0,1,bundle promo
+CLI_0076,5,242,8637.0,2,discount
+CLI_0077,6,248,9091.0,2,discount
+CLI_0078,7,244,8730.0,2,discount
+CLI_0079,0,263,9808.0,0,VIP offer
+CLI_0080,0,256,8412.0,0,VIP offer
+CLI_0081,0,244,8349.0,1,bundle promo
+CLI_0082,3,228,7120.0,1,bundle promo
+CLI_0083,3,232,7667.0,1,bundle promo
+CLI_0084,6,255,8806.0,2,discount
+CLI_0085,0,244,7908.0,1,bundle promo
+CLI_0086,1,206,8089.0,1,bundle promo
+CLI_0087,3,259,8259.0,0,VIP offer
+CLI_0088,0,249,8462.0,1,bundle promo
+CLI_0089,0,247,8144.0,1,bundle promo
+CLI_0090,1,245,8706.0,1,bundle promo
+CLI_0091,1,235,8959.0,1,bundle promo
+CLI_0092,1,247,8260.0,1,bundle promo
+CLI_0093,2,215,6935.0,1,bundle promo
+CLI_0094,2,244,8757.0,1,bundle promo
+CLI_0095,17,246,9532.0,2,discount
+CLI_0096,11,216,7310.0,2,discount
+CLI_0097,1,265,9256.0,0,VIP offer
+CLI_0098,0,270,9258.0,0,VIP offer
+CLI_0099,4,243,8235.0,1,bundle promo
+CLI_0100,1,270,9072.0,0,VIP offer
+CLI_0101,2,230,7979.0,1,bundle promo
+CLI_0102,5,240,9080.0,2,discount
+CLI_0103,1,234,8489.0,1,bundle promo
+CLI_0104,2,249,8766.0,0,VIP offer
+CLI_0105,3,228,7754.0,1,bundle promo
+CLI_0106,4,255,9414.0,0,VIP offer
+CLI_0107,3,253,8285.0,1,bundle promo
+CLI_0108,3,266,9538.0,0,VIP offer
+CLI_0109,1,265,9611.0,0,VIP offer
+CLI_0110,2,256,9310.0,0,VIP offer
+CLI_0111,1,252,8339.0,1,bundle promo
+CLI_0112,2,250,9502.0,0,VIP offer
+CLI_0113,2,253,8076.0,1,bundle promo
+CLI_0114,6,214,7313.0,1,bundle promo
+CLI_0115,6,230,8606.0,2,discount
+CLI_0116,9,217,7929.0,2,discount
+CLI_0117,3,223,7936.0,1,bundle promo
+CLI_0118,0,230,8611.0,1,bundle promo
+CLI_0119,0,262,8850.0,0,VIP offer
+CLI_0120,0,259,9733.0,0,VIP offer
+CLI_0121,7,230,7706.0,2,discount
+CLI_0122,4,259,8915.0,0,VIP offer
+CLI_0123,1,248,8098.0,1,bundle promo
+CLI_0124,3,237,9244.0,0,VIP offer
+CLI_0125,2,243,8387.0,1,bundle promo
+CLI_0126,5,219,8135.0,1,bundle promo
+CLI_0127,3,242,8988.0,0,VIP offer
+CLI_0128,1,241,8481.0,1,bundle promo
+CLI_0129,0,238,8302.0,1,bundle promo
+CLI_0130,1,222,7685.0,1,bundle promo
+CLI_0131,6,231,8308.0,2,discount
+CLI_0132,1,223,7522.0,1,bundle promo
+CLI_0133,3,254,9415.0,0,VIP offer
+CLI_0134,2,236,7840.0,1,bundle promo
+CLI_0135,5,250,8358.0,2,discount
+CLI_0136,1,260,8936.0,0,VIP offer
+CLI_0137,2,246,9317.0,0,VIP offer
+CLI_0138,2,236,7821.0,1,bundle promo
+CLI_0139,0,242,8433.0,1,bundle promo
+CLI_0140,2,234,8416.0,1,bundle promo
+CLI_0141,14,229,9109.0,2,discount
+CLI_0142,3,236,8657.0,1,bundle promo
+CLI_0143,3,229,7920.0,1,bundle promo
+CLI_0144,0,227,8075.0,1,bundle promo
+CLI_0145,3,266,8999.0,0,VIP offer
+CLI_0146,7,247,8622.0,2,discount
+CLI_0147,0,263,8742.0,0,VIP offer
+CLI_0148,9,239,8754.0,2,discount
+CLI_0149,0,249,8559.0,1,bundle promo
+CLI_0150,2,269,9490.0,0,VIP offer
+CLI_0151,7,213,6336.0,1,bundle promo
+CLI_0152,8,250,9086.0,2,discount
+CLI_0153,2,220,7317.0,1,bundle promo
+CLI_0154,3,255,9289.0,0,VIP offer
+CLI_0155,0,258,8902.0,0,VIP offer
+CLI_0156,5,245,8755.0,2,discount
+CLI_0157,4,244,8651.0,1,bundle promo
+CLI_0158,2,230,8076.0,1,bundle promo
+CLI_0159,1,244,8027.0,1,bundle promo
+CLI_0160,0,239,8972.0,1,bundle promo
+CLI_0161,3,256,9530.0,0,VIP offer
+CLI_0162,2,227,7699.0,1,bundle promo
+CLI_0163,3,236,8768.0,1,bundle promo
+CLI_0164,2,251,9883.0,0,VIP offer
+CLI_0165,0,240,8786.0,1,bundle promo
+CLI_0166,2,225,8109.0,1,bundle promo
+CLI_0167,0,239,8805.0,1,bundle promo
+CLI_0168,0,236,7811.0,1,bundle promo
+CLI_0169,0,260,9246.0,0,VIP offer
+CLI_0170,1,238,7955.0,1,bundle promo
+CLI_0171,4,218,7880.0,1,bundle promo
+CLI_0172,0,243,8236.0,1,bundle promo
+CLI_0173,0,242,8108.0,1,bundle promo
+CLI_0174,0,242,8225.0,1,bundle promo
+CLI_0175,1,287,9812.0,0,VIP offer
+CLI_0176,0,226,8193.0,1,bundle promo
+CLI_0177,1,236,8654.0,1,bundle promo
+CLI_0178,12,270,9727.0,2,discount
+CLI_0179,1,232,7429.0,1,bundle promo
+CLI_0180,1,252,8258.0,1,bundle promo
+CLI_0181,1,244,8331.0,1,bundle promo
+CLI_0182,0,253,9062.0,0,VIP offer
+CLI_0183,1,252,8820.0,0,VIP offer
+CLI_0184,4,263,9843.0,0,VIP offer
+CLI_0185,2,210,7397.0,1,bundle promo
+CLI_0186,1,270,10333.0,0,VIP offer
+CLI_0187,3,241,8416.0,1,bundle promo
+CLI_0188,3,260,9230.0,0,VIP offer
+CLI_0189,2,273,9272.0,0,VIP offer
+CLI_0190,3,254,9423.0,0,VIP offer
+CLI_0191,0,222,7722.0,1,bundle promo
+CLI_0192,2,227,8292.0,1,bundle promo
+CLI_0193,0,228,7787.0,1,bundle promo
+CLI_0194,2,234,8140.0,1,bundle promo
+CLI_0195,3,235,8546.0,1,bundle promo
+CLI_0196,9,228,7964.0,2,discount
+CLI_0197,2,259,9676.0,0,VIP offer
+CLI_0198,1,232,7960.0,1,bundle promo
+CLI_0199,3,238,8105.0,1,bundle promo
+CLI_0200,0,234,7944.0,1,bundle promo
+CLI_0201,8,247,9061.0,2,discount
+CLI_0202,0,264,9181.0,0,VIP offer
+CLI_0203,2,251,9088.0,0,VIP offer
+CLI_0204,4,272,9917.0,0,VIP offer
+CLI_0205,1,241,8931.0,1,bundle promo
+CLI_0206,5,227,7978.0,1,bundle promo
+CLI_0207,1,255,9356.0,0,VIP offer
+CLI_0208,2,248,8652.0,0,VIP offer
+CLI_0209,2,257,8534.0,0,VIP offer
+CLI_0210,1,257,9443.0,0,VIP offer
+CLI_0211,1,239,9214.0,0,VIP offer
+CLI_0212,1,255,8699.0,0,VIP offer
+CLI_0213,6,267,8712.0,0,VIP offer
+CLI_0214,0,263,8533.0,0,VIP offer
+CLI_0215,0,270,8675.0,0,VIP offer
+CLI_0216,0,249,8129.0,1,bundle promo
+CLI_0217,3,247,8361.0,1,bundle promo
+CLI_0218,0,240,8222.0,1,bundle promo
+CLI_0219,0,246,9651.0,0,VIP offer
+CLI_0220,1,251,9822.0,0,VIP offer
+CLI_0221,5,255,9010.0,0,VIP offer
+CLI_0222,5,264,9152.0,0,VIP offer
+CLI_0223,5,237,7797.0,1,bundle promo
+CLI_0224,7,250,8726.0,2,discount
+CLI_0225,2,251,8859.0,0,VIP offer
+CLI_0226,9,245,8193.0,2,discount
+CLI_0227,0,243,9448.0,0,VIP offer
+CLI_0228,3,240,8248.0,1,bundle promo
+CLI_0229,1,247,8089.0,1,bundle promo
+CLI_0230,11,248,7992.0,2,discount
+CLI_0231,9,256,8657.0,2,discount
+CLI_0232,4,238,7603.0,1,bundle promo
+CLI_0233,1,225,8117.0,1,bundle promo
+CLI_0234,4,249,9532.0,0,VIP offer
+CLI_0235,4,247,9531.0,0,VIP offer
+CLI_0236,0,229,8440.0,1,bundle promo
+CLI_0237,1,232,8414.0,1,bundle promo
+CLI_0238,0,240,8673.0,1,bundle promo
+CLI_0239,0,259,9286.0,0,VIP offer
+CLI_0240,2,246,8228.0,1,bundle promo
+CLI_0241,1,234,8584.0,1,bundle promo
+CLI_0242,3,231,8548.0,1,bundle promo
+CLI_0243,0,232,8970.0,1,bundle promo
+CLI_0244,0,243,8834.0,1,bundle promo
+CLI_0245,3,227,8527.0,1,bundle promo
+CLI_0246,5,251,9333.0,0,VIP offer
+CLI_0247,1,269,9580.0,0,VIP offer
+CLI_0248,5,266,9138.0,0,VIP offer
+CLI_0249,1,262,9995.0,0,VIP offer
+CLI_0250,0,267,9349.0,0,VIP offer
+CLI_0251,2,252,8646.0,0,VIP offer
+CLI_0252,1,225,7537.0,1,bundle promo
+CLI_0253,3,241,8462.0,1,bundle promo
+CLI_0254,2,251,9506.0,0,VIP offer
+CLI_0255,0,259,8279.0,0,VIP offer
+CLI_0256,14,250,9267.0,2,discount
+CLI_0257,0,257,8525.0,0,VIP offer
+CLI_0258,0,248,8833.0,0,VIP offer
+CLI_0259,2,242,7698.0,1,bundle promo
+CLI_0260,0,267,9147.0,0,VIP offer
+CLI_0261,3,254,8904.0,0,VIP offer
+CLI_0262,2,230,7586.0,1,bundle promo
+CLI_0263,0,249,8962.0,0,VIP offer
+CLI_0264,5,232,8542.0,2,discount
+CLI_0265,4,277,11310.0,0,VIP offer
+CLI_0266,3,255,9203.0,0,VIP offer
+CLI_0267,1,227,7458.0,1,bundle promo
+CLI_0268,4,261,9895.0,0,VIP offer
+CLI_0269,4,209,7270.0,1,bundle promo
+CLI_0270,2,232,8305.0,1,bundle promo
+CLI_0271,3,261,9940.0,0,VIP offer
+CLI_0272,1,227,7996.0,1,bundle promo
+CLI_0273,2,261,8885.0,0,VIP offer
+CLI_0274,3,215,6844.0,1,bundle promo
+CLI_0275,1,230,8932.0,1,bundle promo
+CLI_0276,0,238,8077.0,1,bundle promo
+CLI_0277,4,230,8727.0,1,bundle promo
+CLI_0278,1,240,8789.0,1,bundle promo
+CLI_0279,0,250,10183.0,0,VIP offer
+CLI_0280,0,241,8192.0,1,bundle promo
+CLI_0281,1,259,10096.0,0,VIP offer
+CLI_0282,2,265,9072.0,0,VIP offer
+CLI_0283,0,244,8552.0,1,bundle promo
+CLI_0284,0,263,8985.0,0,VIP offer
+CLI_0285,2,267,9055.0,0,VIP offer
+CLI_0286,4,235,9261.0,0,VIP offer
+CLI_0287,4,223,9204.0,1,bundle promo
+CLI_0288,0,267,9066.0,0,VIP offer
+CLI_0289,4,230,8322.0,1,bundle promo
+CLI_0290,8,235,9062.0,2,discount
+CLI_0291,7,236,8068.0,2,discount
+CLI_0292,2,259,9093.0,0,VIP offer
+CLI_0293,2,263,9272.0,0,VIP offer
+CLI_0294,1,231,7691.0,1,bundle promo
+CLI_0295,1,234,8373.0,1,bundle promo
+CLI_0296,3,242,8357.0,1,bundle promo
+CLI_0297,5,240,8543.0,2,discount
+CLI_0298,1,251,9607.0,0,VIP offer
+CLI_0299,0,248,8923.0,0,VIP offer
+CLI_0300,1,239,7851.0,1,bundle promo
+CLI_0301,3,271,9870.0,0,VIP offer
+CLI_0302,14,232,7879.0,2,discount
+CLI_0303,5,228,7983.0,1,bundle promo
+CLI_0304,2,267,9643.0,0,VIP offer
+CLI_0305,3,254,8640.0,0,VIP offer
+CLI_0306,2,223,7559.0,1,bundle promo
+CLI_0307,7,233,8006.0,2,discount
+CLI_0308,4,267,9090.0,0,VIP offer
+CLI_0309,0,262,9627.0,0,VIP offer
+CLI_0310,5,234,8942.0,2,discount
+CLI_0311,1,235,9291.0,0,VIP offer
+CLI_0312,3,230,8005.0,1,bundle promo
+CLI_0313,1,260,10320.0,0,VIP offer
+CLI_0314,0,245,8803.0,0,VIP offer
+CLI_0315,1,241,7689.0,1,bundle promo
+CLI_0316,4,254,10024.0,0,VIP offer
+CLI_0317,1,268,9688.0,0,VIP offer
+CLI_0318,2,239,8317.0,1,bundle promo
+CLI_0319,6,218,7408.0,1,bundle promo
+CLI_0320,0,217,7680.0,1,bundle promo
+CLI_0321,4,273,9989.0,0,VIP offer
+CLI_0322,4,258,8618.0,0,VIP offer
+CLI_0323,3,255,9603.0,0,VIP offer
+CLI_0324,2,237,8249.0,1,bundle promo
+CLI_0325,2,251,8866.0,0,VIP offer
+CLI_0326,2,236,8429.0,1,bundle promo
+CLI_0327,0,236,8167.0,1,bundle promo
+CLI_0328,3,238,9110.0,0,VIP offer
+CLI_0329,12,227,8000.0,2,discount
+CLI_0330,0,197,7074.0,1,bundle promo
+CLI_0331,2,230,8097.0,1,bundle promo
+CLI_0332,0,229,8232.0,1,bundle promo
+CLI_0333,2,256,9916.0,0,VIP offer
+CLI_0334,6,256,8815.0,2,discount
+CLI_0335,8,238,8337.0,2,discount
+CLI_0336,0,248,8299.0,1,bundle promo
+CLI_0337,0,223,7487.0,1,bundle promo
+CLI_0338,0,241,8325.0,1,bundle promo
+CLI_0339,0,268,10372.0,0,VIP offer
+CLI_0340,3,265,9344.0,0,VIP offer
+CLI_0341,0,240,8385.0,1,bundle promo
+CLI_0342,3,245,9305.0,0,VIP offer
+CLI_0343,3,219,7823.0,1,bundle promo
+CLI_0344,4,237,8163.0,1,bundle promo
+CLI_0345,0,240,8279.0,1,bundle promo
+CLI_0346,1,244,8944.0,0,VIP offer
+CLI_0347,3,248,9231.0,0,VIP offer
+CLI_0348,2,256,8647.0,0,VIP offer
+CLI_0349,0,222,7921.0,1,bundle promo
+CLI_0350,6,232,8943.0,2,discount
+CLI_0351,1,239,8054.0,1,bundle promo
+CLI_0352,8,226,8295.0,2,discount
+CLI_0353,0,250,8580.0,0,VIP offer
+CLI_0354,2,234,8152.0,1,bundle promo
+CLI_0355,0,261,9141.0,0,VIP offer
+CLI_0356,5,240,8228.0,2,discount
+CLI_0357,0,235,8127.0,1,bundle promo
+CLI_0358,13,233,7965.0,2,discount
+CLI_0359,1,244,8884.0,0,VIP offer
+CLI_0360,2,217,8140.0,1,bundle promo
+CLI_0361,0,241,8694.0,1,bundle promo
+CLI_0362,3,231,8482.0,1,bundle promo
+CLI_0363,0,247,9219.0,0,VIP offer
+CLI_0364,0,250,9094.0,0,VIP offer
+CLI_0365,8,262,9065.0,2,discount
+CLI_0366,5,238,8128.0,1,bundle promo
+CLI_0367,5,246,9300.0,0,VIP offer
+CLI_0368,2,248,8849.0,0,VIP offer
+CLI_0369,4,243,7748.0,1,bundle promo
+CLI_0370,4,239,8548.0,1,bundle promo
+CLI_0371,0,236,8490.0,1,bundle promo
+CLI_0372,1,245,8481.0,1,bundle promo
+CLI_0373,0,235,8459.0,1,bundle promo
+CLI_0374,8,237,8417.0,2,discount
+CLI_0375,0,234,8160.0,1,bundle promo
+CLI_0376,5,266,9021.0,0,VIP offer
+CLI_0377,3,230,7919.0,1,bundle promo
+CLI_0378,0,260,8520.0,0,VIP offer
+CLI_0379,0,242,8047.0,1,bundle promo
+CLI_0380,4,242,8701.0,1,bundle promo
+CLI_0381,5,258,10506.0,0,VIP offer
+CLI_0382,1,220,7562.0,1,bundle promo
+CLI_0383,0,217,8086.0,1,bundle promo
+CLI_0384,2,253,9200.0,0,VIP offer
+CLI_0385,4,228,8124.0,1,bundle promo
+CLI_0386,7,255,7731.0,2,discount
+CLI_0387,1,253,9581.0,0,VIP offer
+CLI_0388,0,223,7852.0,1,bundle promo
+CLI_0389,9,242,8928.0,2,discount
+CLI_0390,7,238,8532.0,2,discount
+CLI_0391,1,220,7430.0,1,bundle promo
+CLI_0392,7,231,8835.0,2,discount
+CLI_0393,7,231,9096.0,2,discount
+CLI_0394,8,245,8599.0,2,discount
+CLI_0395,2,236,9071.0,1,bundle promo
+CLI_0396,0,228,8418.0,1,bundle promo
+CLI_0397,0,243,8315.0,1,bundle promo
+CLI_0398,1,228,8803.0,1,bundle promo
+CLI_0399,5,243,8709.0,2,discount
+CLI_0400,1,244,9094.0,0,VIP offer
+CLI_0401,0,251,8407.0,1,bundle promo
+CLI_0402,0,252,9096.0,0,VIP offer
+CLI_0403,1,254,8179.0,1,bundle promo
+CLI_0404,5,265,10174.0,0,VIP offer
+CLI_0405,0,242,8914.0,1,bundle promo
+CLI_0406,0,270,8961.0,0,VIP offer
+CLI_0407,1,215,7596.0,1,bundle promo
+CLI_0408,1,242,8106.0,1,bundle promo
+CLI_0409,13,244,8461.0,2,discount
+CLI_0410,8,253,9885.0,2,discount
+CLI_0411,3,277,9414.0,0,VIP offer
+CLI_0412,5,269,9526.0,0,VIP offer
+CLI_0413,7,246,8136.0,2,discount
+CLI_0414,2,236,8490.0,1,bundle promo
+CLI_0415,11,195,7092.0,2,discount
+CLI_0416,3,265,10012.0,0,VIP offer
+CLI_0417,4,224,8430.0,1,bundle promo
+CLI_0418,4,227,7364.0,1,bundle promo
+CLI_0419,2,238,7160.0,1,bundle promo
+CLI_0420,8,232,7658.0,2,discount
+CLI_0421,1,246,8625.0,1,bundle promo
+CLI_0422,12,229,8672.0,2,discount
+CLI_0423,7,251,8228.0,2,discount
+CLI_0424,1,262,9816.0,0,VIP offer
+CLI_0425,2,254,9312.0,0,VIP offer
+CLI_0426,0,230,8705.0,1,bundle promo
+CLI_0427,3,242,8727.0,1,bundle promo
+CLI_0428,0,263,10040.0,0,VIP offer
+CLI_0429,1,235,8398.0,1,bundle promo
+CLI_0430,0,222,7911.0,1,bundle promo
+CLI_0431,3,260,9522.0,0,VIP offer
+CLI_0432,3,261,9021.0,0,VIP offer
+CLI_0433,1,238,9056.0,1,bundle promo
+CLI_0434,0,239,8626.0,1,bundle promo
+CLI_0435,9,243,8254.0,2,discount
+CLI_0436,3,232,8852.0,1,bundle promo
+CLI_0437,6,257,8865.0,2,discount
+CLI_0438,1,241,8430.0,1,bundle promo
+CLI_0439,1,245,8362.0,1,bundle promo
+CLI_0440,0,251,9550.0,0,VIP offer
+CLI_0441,12,220,7695.0,2,discount
+CLI_0442,4,291,10252.0,0,VIP offer
+CLI_0443,4,229,8881.0,1,bundle promo
+CLI_0444,1,278,9804.0,0,VIP offer
+CLI_0445,0,230,7858.0,1,bundle promo
+CLI_0446,0,232,8497.0,1,bundle promo
+CLI_0447,3,223,7309.0,1,bundle promo
+CLI_0448,8,219,7458.0,2,discount
+CLI_0449,1,238,8445.0,1,bundle promo
+CLI_0450,0,273,10269.0,0,VIP offer
+CLI_0451,2,247,8581.0,1,bundle promo
+CLI_0452,0,220,7979.0,1,bundle promo
+CLI_0453,1,261,9003.0,0,VIP offer
+CLI_0454,2,248,9161.0,0,VIP offer
+CLI_0455,1,230,8292.0,1,bundle promo
+CLI_0456,0,248,10248.0,0,VIP offer
+CLI_0457,8,263,9759.0,0,VIP offer
+CLI_0458,7,225,7779.0,2,discount
+CLI_0459,0,234,8585.0,1,bundle promo
+CLI_0460,1,247,9167.0,0,VIP offer
+CLI_0461,0,232,8337.0,1,bundle promo
+CLI_0462,2,247,9326.0,0,VIP offer
+CLI_0463,0,224,7545.0,1,bundle promo
+CLI_0464,4,215,7729.0,1,bundle promo
+CLI_0465,7,247,8865.0,2,discount
+CLI_0466,1,256,8105.0,1,bundle promo
+CLI_0467,1,262,9567.0,0,VIP offer
+CLI_0468,8,262,9885.0,0,VIP offer
+CLI_0469,1,243,7796.0,1,bundle promo
+CLI_0470,2,241,8910.0,1,bundle promo
+CLI_0471,7,246,9279.0,2,discount
+CLI_0472,0,219,7275.0,1,bundle promo
+CLI_0473,4,226,8659.0,1,bundle promo
+CLI_0474,1,223,9057.0,1,bundle promo
+CLI_0475,0,229,8289.0,1,bundle promo
+CLI_0476,1,263,8951.0,0,VIP offer
+CLI_0477,0,242,8354.0,1,bundle promo
+CLI_0478,5,241,8422.0,2,discount
+CLI_0479,5,229,7121.0,1,bundle promo
+CLI_0480,0,272,8881.0,0,VIP offer
+CLI_0481,0,265,10498.0,0,VIP offer
+CLI_0482,4,252,9319.0,0,VIP offer
+CLI_0483,2,245,8351.0,1,bundle promo
+CLI_0484,0,229,8613.0,1,bundle promo
+CLI_0485,0,259,9765.0,0,VIP offer
+CLI_0486,2,251,9298.0,0,VIP offer
+CLI_0487,7,231,7610.0,2,discount
+CLI_0488,14,249,8642.0,2,discount
+CLI_0489,1,259,9241.0,0,VIP offer
+CLI_0490,1,232,8541.0,1,bundle promo
+CLI_0491,0,202,7411.0,1,bundle promo
+CLI_0492,0,229,8909.0,1,bundle promo
+CLI_0493,4,226,7897.0,1,bundle promo
+CLI_0494,3,229,8753.0,1,bundle promo
+CLI_0495,0,260,9852.0,0,VIP offer
+CLI_0496,0,227,8322.0,1,bundle promo
+CLI_0497,9,227,8332.0,2,discount
+CLI_0498,4,225,7957.0,1,bundle promo
+CLI_0499,1,252,8857.0,0,VIP offer
+CLI_0500,0,253,8552.0,0,VIP offer
